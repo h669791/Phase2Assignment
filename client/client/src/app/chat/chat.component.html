@@ -1,0 +1,30 @@
+<div class="chat-container">
+  <h2>Chat Room</h2>
+
+  <!-- Group/Channel Selection -->
+  <div class="channel-selection">
+    <label for="channelSelect">Select a Group/Channel:</label>
+    <select id="channelSelect" [(ngModel)]="selectedChannel" (change)="onChannelChange()">
+      <option *ngFor="let channel of channels" [value]="channel.id">{{ channel.name }}</option>
+    </select>
+  </div>
+
+  <!-- Chat Display -->
+  <div class="chat-display">
+    <div *ngFor="let message of messages" class="message">
+      <strong class="user">{{ message.username }}:</strong>
+      <span class="text">{{ message.text }}</span>
+    </div>
+  </div>
+
+  <!-- Chat Input Section -->
+  <div class="chat-input">
+    <!-- Image Upload -->
+    <input type="file" (change)="onFileSelected($event)" class="file-input" />
+    <button (click)="sendImage()">📷</button>
+    
+    <!-- Text Message Input -->
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

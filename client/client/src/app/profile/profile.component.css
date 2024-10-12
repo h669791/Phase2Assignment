@@ -1,0 +1,88 @@
+/* Center container with background and rounded corners */
+.profile-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title styling */
+.profile-container h2 {
+    color: #343a40;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Button styling for primary actions */
+button.login-btn,
+button.register-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for buttons */
+button.login-btn:hover,
+button.register-btn:hover {
+    background-color: #218838;
+}
+
+/* Toggle link for switching forms */
+.register-link,
+.login-link {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.register-toggle-btn,
+.login-toggle-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    padding: 0;
+}
+
+/* Styling for profile image upload */
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-image input[type="file"] {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c757d;
+}

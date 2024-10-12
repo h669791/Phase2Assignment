@@ -1,0 +1,41 @@
+<div class="profile-container">
+  <h2>Video Chat Application</h2>
+  
+  <div *ngIf="isLoginMode; else registerTemplate">
+      <label for="username">Username:</label>
+      <input type="text" [(ngModel)]="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+
+      <!-- Login button -->
+      <button class="login-btn" (click)="loginUser()">Login</button>
+
+      <!-- Register link below login button -->
+      <p class="register-link">
+          Don't have an account? 
+          <button class="register-toggle-btn" (click)="toggleRegister()">Register here</button>
+      </p>
+  </div>
+
+  <!-- Register template (shown when isRegisterMode is true) -->
+  <ng-template #registerTemplate>
+      <label for="username">Username:</label>
+      <input type="text" [(ngModel)]="username" name="username" required>
+
+      <label for="email">Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+
+      <!-- Register button -->
+      <button class="register-btn" (click)="registerUser()">Register</button>
+
+      <!-- Login link below register button -->
+      <p class="login-link">
+          Already have an account? 
+          <button class="login-toggle-btn" (click)="toggleLogin()">Login here</button>
+      </p>
+  </ng-template>
+</div>

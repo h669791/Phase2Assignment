@@ -1,0 +1,69 @@
+/* video.component.css */
+
+.video-call-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh; /* Center the container vertically */
+    padding: 1rem;
+  }
+  
+  .video-call-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Style for input and button container */
+  .video-call-container div {
+    margin-bottom: 1rem;
+  }
+  
+  .video-call-container label,
+  .video-call-container input,
+  .video-call-container button {
+    font-size: 1rem;
+    margin: 0.2rem;
+    padding: 0.5rem;
+  }
+  
+  /* Center the video containers */
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Space between local and remote video */
+    margin-top: 1rem;
+  }
+  
+  .video-container h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  /* Video elements styling */
+  video {
+    width: 100%;  /* Make video take the full width of the container */
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the frame without distortion */
+    max-width: 400px;
+    max-height: 300px;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }
+  
+  /* Center control buttons */
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .controls button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  

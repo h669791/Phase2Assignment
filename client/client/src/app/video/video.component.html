@@ -1,0 +1,22 @@
+<div class="video-call-container">
+  <h2>Video Call</h2>
+  <div>
+    <label>Enter Peer ID to call:</label>
+    <input #peerIdInput type="text" placeholder="Peer ID" />
+    <button (click)="startCall(peerIdInput.value)">Start Call</button>
+    <button (click)="endCall()">End Call</button>
+  </div>
+
+  <div class="video-container">
+    <h3>Your Video</h3>
+    <video #localVideo muted autoplay></video>
+
+    <h3>Remote Video</h3>
+    <video #remoteVideo autoplay></video>
+  </div>
+
+  <div class="controls">
+    <button (click)="toggleAudio()">{{ audioEnabled ? 'Mute' : 'Unmute' }}</button>
+    <button (click)="toggleVideo()">{{ videoEnabled ? 'Turn Off Video' : 'Turn On Video' }}</button>
+  </div>
+</div>
