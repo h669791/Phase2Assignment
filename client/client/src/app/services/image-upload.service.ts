@@ -5,15 +5,13 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ImageUploadService {
-  private baseUrl = 'http://localhost:3000/api';
+  private uploadUrl = 'http://localhost:3000/api/upload-image'; // adjust your endpoint as needed
+ 
 
   constructor(private http: HttpClient) {}
 
   // Upload an image file
-  uploadProfileImage(file: File): Observable<{ imagePath: string }> {
-    const formData = new FormData();
-    formData.append('profileImage', file);
-
-    return this.http.post<{ imagePath: string }>(`${this.baseUrl}/upload-profile`, formData);
+  uploadImage(formData: FormData): Observable<any> {
+    return this.http.post(this.uploadUrl, formData);
   }
 }

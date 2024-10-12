@@ -19,11 +19,8 @@
 
   <!-- Chat Input Section -->
   <div class="chat-input">
-    <!-- Image Upload -->
     <input type="file" (change)="onFileSelected($event)" class="file-input" />
-    <button (click)="sendImage()">📷</button>
-    
-    <!-- Text Message Input -->
+    <button (click)="sendImage()" title="Send Image">📷</button>
     <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." />
     <button (click)="sendMessage()">Send</button>
   </div>

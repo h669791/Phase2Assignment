@@ -83,14 +83,18 @@ export class ChatComponent implements OnInit {
 
   sendImage() {
     if (this.selectedFile) {
-      this.imageUploadService.uploadProfileImage(this.selectedFile).subscribe({
-        next: (response) => {
-          console.log('Image uploaded:', response.imagePath);
-        },
-        error: (error) => {
-          console.error('Image upload failed:', error);
-        }
-      });
+        const formData = new FormData();
+        formData.append('image', this.selectedFile);
+
+        this.imageUploadService.uploadImage(formData).subscribe({
+            next: (response) => {
+                const imageUrl = response.imagePath; // URL from server
+                const messageData = { username: this.username, imageUrl };
+                this.socketService.sendMessage(messageData);
+            },
+            error: (error) => console.error('Image upload failed:', error)
+        });
     }
-  }
+}
+
 }
